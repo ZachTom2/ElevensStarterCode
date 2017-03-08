@@ -1,3 +1,5 @@
+package Activity01;
+
 /**
  * Card.java
  *
@@ -34,6 +36,10 @@ public class Card {
 	public Card(String cardRank, String cardSuit, int cardPointValue) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
                 //new code
+                rank = cardRank;
+                suit = cardSuit;
+                pointValue = cardPointValue;
+                
 	}
 
 
@@ -43,6 +49,7 @@ public class Card {
 	 */
 	public String suit() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+                return suit;
    }
 
 	/**
@@ -51,6 +58,7 @@ public class Card {
 	 */
 	public String rank() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+                return rank;
 	}
 
    /**
@@ -59,7 +67,8 @@ public class Card {
 	 */
 	public int pointValue() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
-	}
+                return pointValue;
+        }
 
 	/** Compare this card with the argument.
 	 * @param otherCard the other card to compare to this
@@ -69,6 +78,12 @@ public class Card {
 	 */
 	public boolean matches(Card otherCard) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+                if(this.suit.equals(otherCard.suit()) && this.rank.equals(otherCard.rank())&& this.pointValue == otherCard.pointValue()){
+                    return true;
+                }
+                else{
+                    return false;
+                }
 	}
 
 	/**
@@ -84,5 +99,6 @@ public class Card {
 	@Override
 	public String toString() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+                return this.rank + " of " + this.suit + "(" + (this.pointValue) +")";
 	}
 }
