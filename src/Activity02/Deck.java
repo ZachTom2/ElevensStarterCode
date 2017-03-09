@@ -35,11 +35,14 @@ public class Deck {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
                 for(int i= 0; i < ranks.length; i++){
                     for (int j = 0; j < suits.length; j++){
-                        
+                        Card temp = new Card(ranks[i], suits[j], values[i]);
+                        cards.add(temp);                       
                         
                     }                     
                     
                 }
+                shuffle();
+                size = cards.size();
         }
 
 
@@ -49,14 +52,19 @@ public class Deck {
 	 */
 	public boolean isEmpty() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-	}
-
-	/**
-	 * Accesses the number of undealt cards in this deck.
+        
+                if(size == 0){
+                    return true;                    
+                }
+                else return true;
+        
+        }
+	 /* Accesses the number of undealt cards in this deck.
 	 * @return the number of undealt cards in this deck.
 	 */
 	public int size() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+                return cards.size();
 	}
 
 	/**
@@ -74,6 +82,8 @@ public class Deck {
 	 */
 	public Card deal() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+                size --;
+                return(cards.get(size + 1));
 	}
 
 	/**
